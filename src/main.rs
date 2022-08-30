@@ -1,7 +1,7 @@
 /**
  * コマンドラインツール
  * 報告内容を考えられるような何か
- * メモリ考えるのがめんどいからRust導入
+ * メモリがわからんからRust導入
  */
 use std::io::{self, Write,Error};
 use std::fs::{self,File};
