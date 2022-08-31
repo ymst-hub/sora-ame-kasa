@@ -18,8 +18,7 @@ struct Report{
 }
 
 fn main() {
-    let mut title_buf = String::new();
-    title_buf = syutoku("報告タイトル");
+    let mut title_buf = syutoku("報告タイトル");
     //同名ファイルがあるか検索
     let create_file_name = format!("{}{}",title_buf,".txt");
     let search_result = search(&create_file_name);
@@ -64,7 +63,7 @@ fn search(create_file_name:&str)-> bool{
 }
 
 //テキストファイルの作成
-fn create_text(report: Report)->io::Result<()>{
+fn create_text(report: Report){
     {//書き込みが有効なブロック
         //ここで、スライスを作成しないと、formatの作成でtitleのライフタイムが終わってしまう
         let filename = format!("{}{}",&report.title,".txt");
@@ -75,7 +74,6 @@ fn create_text(report: Report)->io::Result<()>{
         let buf = line.as_bytes();
         writer.write(buf).unwrap();
     }
-    Ok(())
 }
 
 //標準入力へ入力したい内容を表示して取得する処理
