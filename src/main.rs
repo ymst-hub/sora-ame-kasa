@@ -3,9 +3,9 @@
  * 報告内容を考えられるような何か
  * メモリがわからんからRust導入
  */
-use std::io::{self, Write,Error};
-use std::fs::{self,File};
-use std::{env,path};
+use std::io::{self, Write};
+use std::fs::{File};
+use std::{path};
 //TODO
 //一捻り加える
 
